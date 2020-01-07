@@ -1,0 +1,13 @@
+language: objective-c
+os: osx
+osx_image: xcode11.3
+before_install:
+  - gem install xcpretty
+before_script:
+  - set -o pipefail
+script:
+  - xcodebuild test -project ./Mag.xcodeproj -scheme MagTests -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.0.1,name=iPhone 8' | xcpretty -c
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+notifications:
+  email: false
