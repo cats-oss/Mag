@@ -6,7 +6,7 @@ before_install:
 before_script:
   - set -o pipefail
 script:
-  - xcodebuild test -project ./Mag.xcodeproj -scheme MagTests -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.0.1,name=iPhone 8' | xcpretty -c
+  - xcodebuild test -project ./Mag.xcodeproj -scheme MagTests -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 8' | xcpretty -c
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 notifications:
