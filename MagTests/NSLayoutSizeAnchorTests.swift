@@ -26,8 +26,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor + CGSize(width: 100, height: 200)
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == CGSize(width: 100, height: 200)
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == CGSize(width: 100, height: 200)
+                expect(target.multiplier) == 1
                 expect(target.priority) == .required
             }
         }
@@ -37,8 +37,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor + LayoutPriorityValue(CGSize(width: 100, height: 200), priority: .defaultHigh)
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == CGSize(width: 100, height: 200)
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == CGSize(width: 100, height: 200)
+                expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
             }
         }
@@ -48,8 +48,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor - CGSize(width: 100, height: 200)
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == CGSize(width: -100, height: -200)
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == CGSize(width: -100, height: -200)
+                expect(target.multiplier) == 1
             }
         }
 
@@ -58,8 +58,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor - LayoutPriorityValue(CGSize(width: 100, height: 200), priority: .defaultHigh)
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == CGSize(width: -100, height: -200)
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == CGSize(width: -100, height: -200)
+                expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
             }
         }
@@ -69,8 +69,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor * 0.1
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == .zero
-                expect(target.constant.multiplier) == 0.1
+                expect(target.constant) == .zero
+                expect(target.multiplier) == 0.1
                 expect(target.priority) == .required
             }
         }
@@ -80,8 +80,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor * LayoutPriorityValue(0.2, priority: .defaultHigh)
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == .zero
-                expect(target.constant.multiplier) == 0.2
+                expect(target.constant) == .zero
+                expect(target.multiplier) == 0.2
                 expect(target.priority) == .defaultHigh
             }
         }
@@ -91,8 +91,8 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor ~ .defaultHigh
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == .zero
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == .zero
+                expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
             }
         }
@@ -102,16 +102,15 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 let target = view.sizeAnchor ~ 250
                 expect(target.anchor.widthAnchor) == view.widthAnchor
                 expect(target.anchor.heightAnchor) == view.heightAnchor
-                expect(target.constant.value) == .zero
-                expect(target.constant.multiplier) == 1
+                expect(target.constant) == .zero
+                expect(target.multiplier) == 1
                 expect(target.priority) == .init(250)
             }
         }
 
         XCTContext.runActivity(named: "Operator == (NSLayoutSizeAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constant = LayoutConstant(CGSize(width: 100, height: 200), multiplier: 0.3)
-                let target = LayoutAnchorTarget(second.sizeAnchor, constant: constant, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.sizeAnchor, constant: CGSize(width: 100, height: 200), multiplier: 0.3, priority: .defaultHigh)
                 let constraints = view.sizeAnchor == target
                 let constraintWidth = constraints[0]
                 expect(constraintWidth.firstAnchor) == view.widthAnchor
@@ -178,8 +177,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator >= (NSLayoutSizeAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constant = LayoutConstant(CGSize(width: 100, height: 200), multiplier: 0.3)
-                let target = LayoutAnchorTarget(second.sizeAnchor, constant: constant, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.sizeAnchor, constant: CGSize(width: 100, height: 200), multiplier: 0.3, priority: .defaultHigh)
                 let constraints = view.sizeAnchor >= target
                 let constraintWidth = constraints[0]
                 expect(constraintWidth.firstAnchor) == view.widthAnchor
@@ -268,8 +266,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator <= (NSLayoutSizeAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constant = LayoutConstant(CGSize(width: 100, height: 200), multiplier: 0.3)
-                let target = LayoutAnchorTarget(second.sizeAnchor, constant: constant, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.sizeAnchor, constant: CGSize(width: 100, height: 200), multiplier: 0.3, priority: .defaultHigh)
                 let constraints = view.sizeAnchor <= target
                 let constraintWidth = constraints[0]
                 expect(constraintWidth.firstAnchor) == view.widthAnchor
