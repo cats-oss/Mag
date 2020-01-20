@@ -11,9 +11,7 @@ class ViewController: UIViewController {
         view.addSubview(redView)
         redView.sizeAnchor == CGSize(width: 100, height: 100)
         redView.leadingAnchor == view.leadingAnchor + 100
-        redView.topAnchor == view.topAnchor ~ .defaultHigh
-        redView.centerAnchor == view.centerAnchor ~ 900
-        redView.topAnchor == view.bottomAnchor * 0.5
+        redView.topAnchor == (view.bottomAnchor - 100) * 0.5 ~ 999
 
         let label = UILabel(frame: .zero)
         label.text = "Example"

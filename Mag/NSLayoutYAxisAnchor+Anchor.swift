@@ -5,16 +5,16 @@ import AppKit
 #endif
 
 extension NSLayoutYAxisAnchor: LayoutAnchorProtocol {
-    public func constraint(equalTo anchor: NSLayoutYAxisAnchor, constant: LayoutConstant<CGFloat>, priority: LayoutPriority) -> NSLayoutConstraint {
-        constraint(equalTo: anchor, constant: constant.value).with(multiplier: constant.multiplier, priority: priority)
+    public func constraint(equalTo anchor: NSLayoutYAxisAnchor, constant: CGFloat, multiplier: CGFloat, priority: LayoutPriority) -> NSLayoutConstraint {
+        constraint(equalTo: anchor, constant: constant).with(multiplier: multiplier, priority: priority)
     }
 
-    public func constraint(greaterThanOrEqualTo anchor: NSLayoutYAxisAnchor, constant: LayoutConstant<CGFloat>, priority: LayoutPriority) -> NSLayoutConstraint {
-        constraint(greaterThanOrEqualTo: anchor, constant: constant.value).with(multiplier: constant.multiplier, priority: priority)
+    public func constraint(greaterThanOrEqualTo anchor: NSLayoutYAxisAnchor, constant: CGFloat, multiplier: CGFloat, priority: LayoutPriority) -> NSLayoutConstraint {
+        constraint(greaterThanOrEqualTo: anchor, constant: constant).with(multiplier: multiplier, priority: priority)
     }
 
-    public func constraint(lessThanOrEqualTo anchor: NSLayoutYAxisAnchor, constant: LayoutConstant<CGFloat>, priority: LayoutPriority) -> NSLayoutConstraint {
-        constraint(lessThanOrEqualTo: anchor, constant: constant.value).with(multiplier: constant.multiplier, priority: priority)
+    public func constraint(lessThanOrEqualTo anchor: NSLayoutYAxisAnchor, constant: CGFloat, multiplier: CGFloat, priority: LayoutPriority) -> NSLayoutConstraint {
+        constraint(lessThanOrEqualTo: anchor, constant: constant).with(multiplier: multiplier, priority: priority)
     }
 }
 

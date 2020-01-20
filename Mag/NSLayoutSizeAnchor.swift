@@ -26,47 +26,47 @@ public struct NSLayoutSizeAnchor: NSLayoutSizeAnchorProtocol {
 }
 
 extension NSLayoutSizeAnchor: LayoutAnchorProtocol {
-    public func constraint(equalTo anchor: NSLayoutSizeAnchor, constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(equalTo anchor: NSLayoutSizeAnchor, constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(equalTo: anchor.widthAnchor, constant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(equalTo: anchor.heightAnchor, constant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(equalTo: anchor.widthAnchor, constant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(equalTo: anchor.heightAnchor, constant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 
-    public func constraint(greaterThanOrEqualTo anchor: NSLayoutSizeAnchor, constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(greaterThanOrEqualTo anchor: NSLayoutSizeAnchor, constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(greaterThanOrEqualTo: anchor.widthAnchor, constant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(greaterThanOrEqualTo: anchor.heightAnchor, constant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(greaterThanOrEqualTo: anchor.widthAnchor, constant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(greaterThanOrEqualTo: anchor.heightAnchor, constant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 
-    public func constraint(lessThanOrEqualTo anchor: NSLayoutSizeAnchor, constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(lessThanOrEqualTo anchor: NSLayoutSizeAnchor, constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(lessThanOrEqualTo: anchor.widthAnchor, constant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(lessThanOrEqualTo: anchor.heightAnchor, constant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(lessThanOrEqualTo: anchor.widthAnchor, constant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(lessThanOrEqualTo: anchor.heightAnchor, constant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 }
 
 extension NSLayoutSizeAnchor: LayoutDimensionAnchorProtocol {
-    public func constraint(equalToConstant constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(equalToConstant constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(equalToConstant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(equalToConstant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(equalToConstant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(equalToConstant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 
-    public func constraint(greaterThanOrEqualToConstant constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(greaterThanOrEqualToConstant constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(greaterThanOrEqualToConstant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(greaterThanOrEqualToConstant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(greaterThanOrEqualToConstant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(greaterThanOrEqualToConstant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 
-    public func constraint(lessThanOrEqualToConstant constant: LayoutConstant<CGSize>, priority: LayoutPriority) -> [NSLayoutConstraint] {
+    public func constraint(lessThanOrEqualToConstant constant: CGSize, multiplier: CGFloat, priority: LayoutPriority) -> [NSLayoutConstraint] {
         [
-            widthAnchor.constraint(lessThanOrEqualToConstant: .init(constant.value.width, multiplier: constant.multiplier), priority: priority),
-            heightAnchor.constraint(lessThanOrEqualToConstant: .init(constant.value.height, multiplier: constant.multiplier), priority: priority)
+            widthAnchor.constraint(lessThanOrEqualToConstant: constant.width, multiplier: multiplier, priority: priority),
+            heightAnchor.constraint(lessThanOrEqualToConstant: constant.height, multiplier: multiplier, priority: priority)
         ]
     }
 }
