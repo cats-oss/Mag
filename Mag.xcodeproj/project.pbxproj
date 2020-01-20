@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73B460B23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */; };
 		C77BB16523C304D600442EB3 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BB16423C304D600442EB3 /* LayoutConstant.swift */; };
 		C77BB16723C3259F00442EB3 /* NSLayoutConstraint+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */; };
 		C7FDF9B82387E0B9001FF5D3 /* Mag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FDF9AE2387E0B9001FF5D3 /* Mag.framework */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityPrecedenceTests.swift; sourceTree = "<group>"; };
 		C77BB16423C304D600442EB3 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
 		C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Properties.swift"; sourceTree = "<group>"; };
 		C7FDF9AE2387E0B9001FF5D3 /* Mag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C7FDF9BE2387E0B9001FF5D3 /* Info.plist */,
+				C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */,
 				C7FDF9EE238BA99A001FF5D3 /* NSLayoutCenterAnchorTests.swift */,
 				C7FDF9F2238BA99A001FF5D3 /* NSLayoutDimension+OperatorTests.swift */,
 				C7FDF9F0238BA99A001FF5D3 /* NSLayoutEdgeAnchorTests.swift */,
@@ -349,6 +352,7 @@
 				C7FDF9FD238BC043001FF5D3 /* XCTestCaseExtension.swift in Sources */,
 				C7FDF9FB238BAA6B001FF5D3 /* Expectation.swift in Sources */,
 				C7FDF9F9238BA99A001FF5D3 /* NSLayoutSizeAnchorTests.swift in Sources */,
+				C73B460B23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift in Sources */,
 				C7FDF9F8238BA99A001FF5D3 /* NSLayoutDimension+OperatorTests.swift in Sources */,
 				C7FDF9F6238BA99A001FF5D3 /* NSLayoutEdgeAnchorTests.swift in Sources */,
 				C7FDF9F5238BA99A001FF5D3 /* NSLayoutXAxisAnchor+OperatorTests.swift in Sources */,
