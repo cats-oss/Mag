@@ -50,6 +50,8 @@ blueView.sizeAnchor == redView.sizeAnchor
 blueView.centerAnchor == redView.centerAnchor + CGPoint(x: 100, y: -100)
 ```
 
+<img alt="Example" src="https://user-images.githubusercontent.com/5707132/72708416-ff793e80-3ba5-11ea-88f3-541ba1a5005a.png" width="414">
+
 ## Usage
 
 ### Alignment
