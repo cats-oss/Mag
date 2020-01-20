@@ -33,7 +33,7 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator + (NSLayoutYAxisAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.topAnchor + LayoutPriorityValue(200, priority: .defaultHigh)
+                let target = view.topAnchor + (200 ~ .defaultHigh)
                 expect(target.constant) == 200
                 expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
@@ -53,7 +53,7 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator - (NSLayoutYAxisAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.topAnchor - LayoutPriorityValue(200, priority: .defaultHigh)
+                let target = view.topAnchor - (200 ~ .defaultHigh)
                 expect(target.constant) == -200
                 expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
@@ -73,7 +73,7 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator * (NSLayoutYAxisAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.heightAnchor * LayoutPriorityValue(0.2, priority: .defaultHigh)
+                let target = view.heightAnchor * (0.2 ~ .defaultHigh)
                 expect(target.constant) == 0
                 expect(target.multiplier) == 0.2
                 expect(target.priority) == .defaultHigh

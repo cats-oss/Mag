@@ -22,7 +22,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
 
     func testCenterAnchor() {
         XCTContext.runActivity(named: "Operator + (NSLayoutCenterAnchor, CGPoint)") { _ in
-            XCTContext.runActivity(named: "returns (NSLayoutCenterAnchor, CGPoint)") { _ in
+            XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
                 let target = view.centerAnchor + CGPoint(x: 100, y: 100)
                 expect(target.anchor.centerXAnchor) == view.centerXAnchor
                 expect(target.anchor.centerYAnchor) == view.centerYAnchor
@@ -34,7 +34,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator + (NSLayoutCenterAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.centerAnchor + LayoutPriorityValue(CGPoint(x: 100, y: 100), priority: .defaultHigh)
+                let target = view.centerAnchor + (CGPoint(x: 100, y: 100) ~ .defaultHigh)
                 expect(target.anchor.centerXAnchor) == view.centerXAnchor
                 expect(target.anchor.centerYAnchor) == view.centerYAnchor
                 expect(target.constant) == CGPoint(x: 100, y: 100)
@@ -44,7 +44,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
         }
 
         XCTContext.runActivity(named: "Operator - (NSLayoutCenterAnchor, CGPoint)") { _ in
-            XCTContext.runActivity(named: "returns (NSLayoutCenterAnchor, CGPoint)") { _ in
+            XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
                 let target = view.centerAnchor - CGPoint(x: 100, y: 100)
                 expect(target.anchor.centerXAnchor) == view.centerXAnchor
                 expect(target.anchor.centerYAnchor) == view.centerYAnchor
@@ -55,7 +55,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator - (NSLayoutCenterAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.centerAnchor - LayoutPriorityValue(CGPoint(x: 100, y: 100), priority: .defaultHigh)
+                let target = view.centerAnchor - (CGPoint(x: 100, y: 100) ~ .defaultHigh)
                 expect(target.anchor.centerXAnchor) == view.centerXAnchor
                 expect(target.anchor.centerYAnchor) == view.centerYAnchor
                 expect(target.constant) == CGPoint(x: -100, y: -100)
@@ -77,7 +77,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator * (NSLayoutCenterAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.centerAnchor * LayoutPriorityValue(0.2, priority: .defaultHigh)
+                let target = view.centerAnchor * (0.2 ~ .defaultHigh)
                 expect(target.anchor.centerXAnchor) == view.centerXAnchor
                 expect(target.anchor.centerYAnchor) == view.centerYAnchor
                 expect(target.constant) == .zero

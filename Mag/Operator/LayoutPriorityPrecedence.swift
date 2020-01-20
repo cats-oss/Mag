@@ -1,6 +1,6 @@
 precedencegroup LayoutPriorityPrecedence {
-    higherThan: MultiplicationPrecedence
-    lowerThan: BitwiseShiftPrecedence
+    higherThan: RangeFormationPrecedence
+    lowerThan: AdditionPrecedence
 }
 
 infix operator ~: LayoutPriorityPrecedence

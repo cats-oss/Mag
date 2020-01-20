@@ -13,3 +13,25 @@ public struct LayoutAnchorTarget<Anchor: LayoutAnchorProtocol> {
         self.priority = priority
     }
 }
+
+public extension LayoutAnchorTarget {
+    static func + (lhs: Self, rhs: Anchor.Constant) -> Self {
+        LayoutAnchorTarget(lhs.anchor, constant: rhs, multiplier: lhs.multiplier, priority: lhs.priority)
+    }
+
+    static func - (lhs: Self, rhs: Anchor.Constant) -> Self {
+        LayoutAnchorTarget(lhs.anchor, constant: -rhs, multiplier: lhs.multiplier, priority: lhs.priority)
+    }
+
+    static func * (lhs: Self, rhs: CGFloat) -> Self {
+        LayoutAnchorTarget(lhs.anchor, constant: lhs.constant, multiplier: rhs, priority: lhs.priority)
+    }
+
+    static func ~ (lhs: Self, rhs: LayoutPriority) -> Self {
+        LayoutAnchorTarget(lhs.anchor, constant: lhs.constant, multiplier: lhs.multiplier, priority: rhs)
+    }
+
+    static func ~ <T: BinaryFloatingPoint>(lhs: Self, rhs: T) -> Self {
+        LayoutAnchorTarget(lhs.anchor, constant: lhs.constant, multiplier: lhs.multiplier, priority: .init(Float(rhs)))
+    }
+}

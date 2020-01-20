@@ -33,7 +33,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator + (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.heightAnchor + LayoutPriorityValue(200, priority: .defaultHigh)
+                let target = view.heightAnchor + (200 ~ .defaultHigh)
                 expect(target.constant) == 200
                 expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
@@ -53,7 +53,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator - (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.heightAnchor - LayoutPriorityValue(200, priority: .defaultHigh)
+                let target = view.heightAnchor - (200 ~ .defaultHigh)
                 expect(target.constant) == -200
                 expect(target.multiplier) == 1
                 expect(target.priority) == .defaultHigh
@@ -73,7 +73,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator * (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.heightAnchor * LayoutPriorityValue(0.2, priority: .defaultHigh)
+                let target = view.heightAnchor * (0.2 ~ .defaultHigh)
                 expect(target.constant) == 0
                 expect(target.multiplier) == 0.2
                 expect(target.priority) == .defaultHigh
@@ -115,7 +115,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator == (NSLayoutDimension, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let target = LayoutAnchorTarget(second.heightAnchor, constant: CGFloat(300), multiplier: 0.3, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.heightAnchor, constant: 300, multiplier: 0.3, priority: .defaultHigh)
                 let constraint = view.heightAnchor == target
                 expect(constraint.secondAnchor) == second.heightAnchor
                 expect(constraint.constant) == 300
@@ -128,7 +128,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator == (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let constraint = view.heightAnchor == LayoutPriorityValue(200, priority: .defaultHigh)
+                let constraint = view.heightAnchor == (200 ~ .defaultHigh)
                 expect(constraint.secondAnchor) == nil
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
@@ -164,7 +164,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator >= (NSLayoutDimension, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let target = LayoutAnchorTarget(second.heightAnchor, constant: CGFloat(300), multiplier: 0.3, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.heightAnchor, constant: 300, multiplier: 0.3, priority: .defaultHigh)
                 let constraint = view.heightAnchor >= target
                 expect(constraint.secondAnchor) == second.heightAnchor
                 expect(constraint.constant) == 300
@@ -177,7 +177,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator >= (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let constraint = view.heightAnchor >= LayoutPriorityValue(200, priority: .defaultHigh)
+                let constraint = view.heightAnchor >= (200 ~ .defaultHigh)
                 expect(constraint.secondAnchor) == nil
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
@@ -213,7 +213,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator <= (NSLayoutDimension, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let target = LayoutAnchorTarget(second.heightAnchor, constant: CGFloat(300), multiplier: 0.3, priority: .defaultHigh)
+                let target = LayoutAnchorTarget(second.heightAnchor, constant: 300, multiplier: 0.3, priority: .defaultHigh)
                 let constraint = view.heightAnchor <= target
                 expect(constraint.secondAnchor) == second.heightAnchor
                 expect(constraint.constant) == 300
@@ -226,7 +226,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
 
         XCTContext.runActivity(named: "Operator <= (NSLayoutDimension, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
-                let constraint = view.heightAnchor <= LayoutPriorityValue(200, priority: .defaultHigh)
+                let constraint = view.heightAnchor <= (200 ~ .defaultHigh)
                 expect(constraint.secondAnchor) == nil
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
