@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C73B460B23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */; };
 		C73B460D23D585AB00353CF1 /* LayoutAnchorTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B460C23D585AB00353CF1 /* LayoutAnchorTargetTests.swift */; };
-		C77BB16523C304D600442EB3 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BB16423C304D600442EB3 /* LayoutConstant.swift */; };
 		C77BB16723C3259F00442EB3 /* NSLayoutConstraint+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */; };
 		C7FDF9B82387E0B9001FF5D3 /* Mag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FDF9AE2387E0B9001FF5D3 /* Mag.framework */; };
 		C7FDF9BF2387E0B9001FF5D3 /* Mag.h in Headers */ = {isa = PBXBuildFile; fileRef = C7FDF9B12387E0B9001FF5D3 /* Mag.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityPrecedenceTests.swift; sourceTree = "<group>"; };
 		C73B460C23D585AB00353CF1 /* LayoutAnchorTargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchorTargetTests.swift; sourceTree = "<group>"; };
-		C77BB16423C304D600442EB3 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
 		C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Properties.swift"; sourceTree = "<group>"; };
 		C7FDF9AE2387E0B9001FF5D3 /* Mag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FDF9B12387E0B9001FF5D3 /* Mag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mag.h; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				C7FDF9CD2387E71D001FF5D3 /* LayoutAnchorTarget.swift */,
-				C77BB16423C304D600442EB3 /* LayoutConstant.swift */,
 				C7FDF9D52387E71D001FF5D3 /* LayoutPriorityValue.swift */,
 			);
 			path = Model;
@@ -334,7 +331,6 @@
 				C7FDF9ED2387ED73001FF5D3 /* View.swift in Sources */,
 				C7FDF9E42387E71D001FF5D3 /* NSLayoutConstraint+Activatable.swift in Sources */,
 				C7FDF9DA2387E71D001FF5D3 /* NSLayoutCenterAnchor.swift in Sources */,
-				C77BB16523C304D600442EB3 /* LayoutConstant.swift in Sources */,
 				C7FDF9EB2387EB00001FF5D3 /* EdgeInsets.swift in Sources */,
 				C7FDF9E52387E71D001FF5D3 /* LayoutConstantProtocol.swift in Sources */,
 				C77BB16723C3259F00442EB3 /* NSLayoutConstraint+Properties.swift in Sources */,
