@@ -104,6 +104,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
         XCTContext.runActivity(named: "Operator == (NSLayoutYAxisAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let constraint = view.topAnchor == second.topAnchor
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
@@ -117,6 +119,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let target = LayoutAnchorTarget(second.topAnchor, constant: 300, multiplier: 0.3, priority: .defaultHigh)
                 let constraint = view.topAnchor == target
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 300
                 expect(floor(constraint.multiplier * 100)) == 30
@@ -129,6 +133,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
         XCTContext.runActivity(named: "Operator >= (NSLayoutYAxisAnchor, NSLayoutYAxisAnchor)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let constraint = view.topAnchor >= second.topAnchor
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
@@ -142,6 +148,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let target = LayoutAnchorTarget(second.topAnchor, constant: 300, multiplier: 1, priority: .defaultHigh)
                 let constraint = view.topAnchor >= target
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 300
                 expect(constraint.multiplier) == 1
@@ -154,6 +162,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
         XCTContext.runActivity(named: "Operator <= (NSLayoutYAxisAnchor, NSLayoutYAxisAnchor)") { _ in
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let constraint = view.topAnchor <= second.topAnchor
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
@@ -167,6 +177,8 @@ private final class NSLayoutYAxisAnchor_OperatorTests: XCTestCase {
             XCTContext.runActivity(named: "returns NSLayoutConstraint") { _ in
                 let target = LayoutAnchorTarget(second.topAnchor, constant: 300, multiplier: 1, priority: .defaultHigh)
                 let constraint = view.topAnchor <= target
+                expect(constraint.firstItem as? UIView) == view
+                expect(constraint.secondItem as? UIView) == second
                 expect(constraint.secondAnchor) == second.topAnchor
                 expect(constraint.constant) == 300
                 expect(constraint.multiplier) == 1
