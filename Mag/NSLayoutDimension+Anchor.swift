@@ -35,6 +35,6 @@ extension NSLayoutDimension: LayoutDimensionAnchorProtocol {
 public extension NSLayoutDimension {
     @discardableResult
     static func == (lhs: NSLayoutDimension, rhs: NSLayoutDimension) -> NSLayoutConstraint {
-        rhs.constraint(equalTo: rhs).activated()
+        lhs.constraint(equalTo: rhs).activated()
     }
 }
