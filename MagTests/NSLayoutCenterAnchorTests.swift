@@ -116,7 +116,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintX.constant) == 100
                 expect(floor(constraintX.multiplier * 100)) == 30
                 expect(constraintX.priority) == .defaultHigh
-                expect(constraintX.isActive) == true
+                expect(constraintX.isActive) == false
                 expect(constraintX.relation) == .equal
                 let constraintY = constraints[1]
                 expect(constraintY.firstAnchor) == view.centerYAnchor
@@ -124,7 +124,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintY.constant) == 100
                 expect(floor(constraintY.multiplier * 100)) == 30
                 expect(constraintY.priority) == .defaultHigh
-                expect(constraintY.isActive) == true
+                expect(constraintY.isActive) == false
                 expect(constraintY.relation) == .equal
             }
         }
@@ -153,7 +153,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintX.constant) == 100
                 expect(constraintX.multiplier) == 1
                 expect(constraintX.priority) == .defaultHigh
-                expect(constraintX.isActive) == true
+                expect(constraintX.isActive) == false
                 expect(constraintX.relation) == .greaterThanOrEqual
                 let constraintY = constraints[1]
                 expect(constraintY.firstAnchor) == view.centerYAnchor
@@ -161,7 +161,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintY.constant) == 100
                 expect(constraintY.multiplier) == 1
                 expect(constraintY.priority) == .defaultHigh
-                expect(constraintY.isActive) == true
+                expect(constraintY.isActive) == false
                 expect(constraintY.relation) == .greaterThanOrEqual
             }
         }
@@ -175,7 +175,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintX.constant) == 0
                 expect(constraintX.multiplier) == 1
                 expect(constraintX.priority) == .required
-                expect(constraintX.isActive) == true
+                expect(constraintX.isActive) == false
                 expect(constraintX.relation) == .greaterThanOrEqual
                 let constraintY = constraints[1]
                 expect(constraintY.firstAnchor) == view.centerYAnchor
@@ -183,7 +183,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintY.constant) == 0
                 expect(constraintY.multiplier) == 1
                 expect(constraintY.priority) == .required
-                expect(constraintY.isActive) == true
+                expect(constraintY.isActive) == false
                 expect(constraintY.relation) == .greaterThanOrEqual
             }
         }
@@ -198,7 +198,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintX.constant) == 100
                 expect(constraintX.multiplier) == 1
                 expect(constraintX.priority) == .defaultHigh
-                expect(constraintX.isActive) == true
+                expect(constraintX.isActive) == false
                 expect(constraintX.relation) == .lessThanOrEqual
                 let constraintY = constraints[1]
                 expect(constraintY.firstAnchor) == view.centerYAnchor
@@ -206,7 +206,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintY.constant) == 100
                 expect(constraintY.multiplier) == 1
                 expect(constraintY.priority) == .defaultHigh
-                expect(constraintY.isActive) == true
+                expect(constraintY.isActive) == false
                 expect(constraintY.relation) == .lessThanOrEqual
             }
         }
@@ -220,7 +220,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintX.constant) == 0
                 expect(constraintX.multiplier) == 1
                 expect(constraintX.priority) == .required
-                expect(constraintX.isActive) == true
+                expect(constraintX.isActive) == false
                 expect(constraintX.relation) == .lessThanOrEqual
                 let constraintY = constraints[1]
                 expect(constraintY.firstAnchor) == view.centerYAnchor
@@ -228,7 +228,7 @@ private final class NSLayoutCneterAnchorTests: XCTestCase {
                 expect(constraintY.constant) == 0
                 expect(constraintY.multiplier) == 1
                 expect(constraintY.priority) == .required
-                expect(constraintY.isActive) == true
+                expect(constraintY.isActive) == false
                 expect(constraintY.relation) == .lessThanOrEqual
             }
         }

@@ -110,7 +110,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .equal
             }
         }
@@ -125,7 +125,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 300
                 expect(floor(constraint.multiplier * 100)) == 30
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .equal
             }
         }
@@ -139,7 +139,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .equal
             }
         }
@@ -153,7 +153,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .equal
             }
         }
@@ -167,7 +167,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .greaterThanOrEqual
             }
         }
@@ -182,7 +182,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 300
                 expect(floor(constraint.multiplier * 100)) == 30
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .greaterThanOrEqual
             }
         }
@@ -196,7 +196,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .greaterThanOrEqual
             }
         }
@@ -210,7 +210,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .greaterThanOrEqual
             }
         }
@@ -224,7 +224,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 0
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .lessThanOrEqual
             }
         }
@@ -239,7 +239,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 300
                 expect(floor(constraint.multiplier * 100)) == 30
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .lessThanOrEqual
             }
         }
@@ -253,7 +253,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .defaultHigh
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .lessThanOrEqual
             }
         }
@@ -267,7 +267,7 @@ private final class NSLayoutDimension_OperatorTests: XCTestCase {
                 expect(constraint.constant) == 200
                 expect(constraint.multiplier) == 1
                 expect(constraint.priority) == .required
-                expect(constraint.isActive) == true
+                expect(constraint.isActive) == false
                 expect(constraint.relation) == .lessThanOrEqual
             }
         }

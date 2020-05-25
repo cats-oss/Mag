@@ -133,7 +133,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 100
                 expect(floor(constraintTop.multiplier * 100)) == 30
                 expect(constraintTop.priority) == .defaultHigh
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .equal
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -141,7 +141,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == -100
                 expect(floor(constraintBottom.multiplier * 100)) == 30
                 expect(constraintBottom.priority) == .defaultHigh
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .equal
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -149,7 +149,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 100
                 expect(floor(constraintLeft.multiplier * 100)) == 30
                 expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .equal
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -157,7 +157,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == -100
                 expect(floor(constraintRight.multiplier * 100)) == 30
                 expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .equal
             }
         }
@@ -171,7 +171,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 0
                 expect(constraintTop.multiplier) == 1
                 expect(constraintTop.priority) == .required
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .equal
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -179,7 +179,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == 0
                 expect(constraintBottom.multiplier) == 1
                 expect(constraintBottom.priority) == .required
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .equal
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -187,7 +187,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 0
                 expect(constraintLeft.multiplier) == 1
                 expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .equal
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -195,7 +195,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == 0
                 expect(constraintRight.multiplier) == 1
                 expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .equal
             }
         }
@@ -215,7 +215,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 100
                 expect(constraintTop.multiplier) == 1
                 expect(constraintTop.priority) == .defaultHigh
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .greaterThanOrEqual
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -223,7 +223,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == -100
                 expect(constraintBottom.multiplier) == 1
                 expect(constraintBottom.priority) == .defaultHigh
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .greaterThanOrEqual
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -231,7 +231,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 100
                 expect(constraintLeft.multiplier) == 1
                 expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .greaterThanOrEqual
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -239,7 +239,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == -100
                 expect(constraintRight.multiplier) == 1
                 expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .greaterThanOrEqual
             }
         }
@@ -253,7 +253,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 0
                 expect(constraintTop.multiplier) == 1
                 expect(constraintTop.priority) == .required
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .greaterThanOrEqual
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -261,7 +261,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == 0
                 expect(constraintBottom.multiplier) == 1
                 expect(constraintBottom.priority) == .required
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .greaterThanOrEqual
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -269,7 +269,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 0
                 expect(constraintLeft.multiplier) == 1
                 expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .greaterThanOrEqual
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -277,7 +277,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == 0
                 expect(constraintRight.multiplier) == 1
                 expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .greaterThanOrEqual
             }
         }
@@ -297,7 +297,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 100
                 expect(constraintTop.multiplier) == 1
                 expect(constraintTop.priority) == .defaultHigh
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .lessThanOrEqual
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -305,7 +305,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == -100
                 expect(constraintBottom.multiplier) == 1
                 expect(constraintBottom.priority) == .defaultHigh
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .lessThanOrEqual
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -313,7 +313,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 100
                 expect(constraintLeft.multiplier) == 1
                 expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .lessThanOrEqual
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -321,7 +321,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == -100
                 expect(constraintRight.multiplier) == 1
                 expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .lessThanOrEqual
             }
         }
@@ -335,7 +335,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintTop.constant) == 0
                 expect(constraintTop.multiplier) == 1
                 expect(constraintTop.priority) == .required
-                expect(constraintTop.isActive) == true
+                expect(constraintTop.isActive) == false
                 expect(constraintTop.relation) == .lessThanOrEqual
                 let constraintBottom = constraints[1]
                 expect(constraintBottom.firstAnchor) == view.bottomAnchor
@@ -343,7 +343,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.constant) == 0
                 expect(constraintBottom.multiplier) == 1
                 expect(constraintBottom.priority) == .required
-                expect(constraintBottom.isActive) == true
+                expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .lessThanOrEqual
                 let constraintLeft = constraints[2]
                 expect(constraintLeft.firstAnchor) == view.leadingAnchor
@@ -351,7 +351,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintLeft.constant) == 0
                 expect(constraintLeft.multiplier) == 1
                 expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == true
+                expect(constraintLeft.isActive) == false
                 expect(constraintLeft.relation) == .lessThanOrEqual
                 let constraintRight = constraints[3]
                 expect(constraintRight.firstAnchor) == view.trailingAnchor
@@ -359,7 +359,7 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintRight.constant) == 0
                 expect(constraintRight.multiplier) == 1
                 expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == true
+                expect(constraintRight.isActive) == false
                 expect(constraintRight.relation) == .lessThanOrEqual
             }
         }
