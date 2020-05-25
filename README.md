@@ -70,6 +70,14 @@ blueView.centerAnchor == redView.centerAnchor + CGPoint(x: 100, y: -100)
 // blueView.centerXAnchor.constraint(equalTo: redView.centerXAnchor, constant: 100)
 // blueView.centerYAnchor.constraint(equalTo: redView.centerYAnchor, constant: -100)
 
+label.horizontalAnchor == redView.horizontalAnchor + UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+// label.leadingAnchor.constraint(equalTo: redView.leadingAnchor, constant: 10)
+// label.trailingAnchor.constraint(equalTo: redView.trailingAnchor, constant: -10)
+
+label.verticalAnchor == redView.verticalAnchor + UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+// label.topAnchor.constraint(equalTo: redView.topAnchor, constant: 5),
+// label.bottomAnchor.constraint(equalTo: redView.bottomAnchor, constant: -5)
+
 label.edgeAnchor == redView.edgeAnchor + UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
 // label.topAnchor.constraint(equalTo: redView.topAnchor, constant: 5),
 // label.bottomAnchor.constraint(equalTo: redView.bottomAnchor, constant: -5)
