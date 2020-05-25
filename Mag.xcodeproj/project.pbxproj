@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C72D59EA247B662600053F98 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59E9247B662600053F98 /* LayoutConstraint.swift */; };
+		C72D59EC247B8AE500053F98 /* NSLayoutConstraint+Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59EB247B8AE500053F98 /* NSLayoutConstraint+Activation.swift */; };
 		C73B460B23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */; };
 		C73B460D23D585AB00353CF1 /* LayoutAnchorTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B460C23D585AB00353CF1 /* LayoutAnchorTargetTests.swift */; };
 		C77BB16723C3259F00442EB3 /* NSLayoutConstraint+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		C72D59E9247B662600053F98 /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		C72D59EB247B8AE500053F98 /* NSLayoutConstraint+Activation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Activation.swift"; sourceTree = "<group>"; };
 		C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityPrecedenceTests.swift; sourceTree = "<group>"; };
 		C73B460C23D585AB00353CF1 /* LayoutAnchorTargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchorTargetTests.swift; sourceTree = "<group>"; };
 		C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Properties.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C77BB16623C3259F00442EB3 /* NSLayoutConstraint+Properties.swift */,
+				C72D59EB247B8AE500053F98 /* NSLayoutConstraint+Activation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				C77BB16723C3259F00442EB3 /* NSLayoutConstraint+Properties.swift in Sources */,
 				C7FDF9E32387E71D001FF5D3 /* LayoutPriorityValue.swift in Sources */,
 				C7FDF9DC2387E71D001FF5D3 /* NSLayoutDimension+Anchor.swift in Sources */,
+				C72D59EC247B8AE500053F98 /* NSLayoutConstraint+Activation.swift in Sources */,
 				C7FDF9D92387E71D001FF5D3 /* NSLayoutEdgeAnchor.swift in Sources */,
 				C7FDF9DF2387E71D001FF5D3 /* NSLayoutYAxisAnchor+Anchor.swift in Sources */,
 				C7FDF9DD2387E71D001FF5D3 /* NSLayoutXAxisAnchor+Anchor.swift in Sources */,
