@@ -118,19 +118,70 @@ redView.centerAnchor == view.centerAnchor ~ 900
 
 ### Constraints
 
-Comparison operators return `NSLayoutConstraint` which has already activated. If target anchors are composite anchors, returns multiple `NSLayoutConstraint`. (e.g. `[NSLayoutConstraint]`)
+Comparison operators return `NSLayoutConstraint`.
 
 ```swift
 let constraint = redView.leadingAnchor == view.leadingAnchor
 // returns NSLayoutConstraint
-constraint.isActive = false
+constraint.isActive = true
+```
 
+If target anchors are composite anchors, returns multiple `NSLayoutConstraint`. (e.g. `[NSLayoutConstraint]`)
+
+```swift
 let constraints = redView.centerAnchor == view.centerAnchor
 // returns [NSLayoutConstraint]
-NSLayoutConstraint.deactivate(constraints)
+NSLayoutConstraint.activate(constraints)
 ```
 
 If `firstItem` in `NSLayoutConstraint` is `UIView` (or `NSView`), `translatesAutoresizingMaskIntoConstraints` is set to `false`.
+
+### Activation
+
+Comparison operators return `NSLayoutConstraint` which has never activated.
+
+If the constraint deinits without being activated, it activates automatically.
+
+```swift
+_ = redView.leadingAnchor == view.leadingAnchor
+// NSLayoutConstraint activates automatically
+```
+
+If you want to activate manually, set `true` to `isActivate` or executes activate methods.
+
+#### Singular Constraint
+
+```swift
+var constraint: NSLayoutConstraint? {
+    didSet {
+        oldValue?.isActivate = false
+        constraint?.isActivate = true
+    }
+}
+
+constraint = redView.leadingAnchor == view.leadingAnchor
+```
+
+#### Multiple Constraints
+
+`Mag` extends `NSLayoutConstraint` deactivate and activate method.
+
+```swift
+var constraints: [NSLayoutConstraint] = [] {
+    didSet {
+        NSLayoutConstraint.deactivate(oldValue, beforeActivate: constraints)
+    }
+}
+
+constraints = redView.centerAnchor == view.centerAnchor
+```
+
+The following process is the same.
+
+```swift
+var constraints: [NSLayoutConstraint] = []
+constraints.replaceActivatedConstraints(redView.centerAnchor == view.centerAnchor)
+```
 
 ## LICENSE
 Under the MIT license. See LICENSE file for details.
