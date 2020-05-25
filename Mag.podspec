@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Mag'
-  s.version          = '0.2.1'
+  s.version          = '1.0.0'
   s.swift_version    = '5.0'
   s.summary          = 'Mag is Framework which wraps NSLayoutAnchor.'
   s.homepage         = 'https://github.com/cats-oss/Mag'
