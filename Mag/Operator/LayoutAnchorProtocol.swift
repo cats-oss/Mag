@@ -2,7 +2,7 @@ import CoreGraphics
 
 public protocol LayoutAnchorProtocol {
     associatedtype Constant: LayoutConstantProtocol
-    associatedtype Constraint: Activatable
+    associatedtype Constraint
 
     func constraint(equalTo anchor: Self, constant: Constant, multiplier: CGFloat, priority: LayoutPriority) -> Constraint
     func constraint(greaterThanOrEqualTo anchor: Self, constant: Constant, multiplier: CGFloat, priority: LayoutPriority) -> Constraint
@@ -12,32 +12,32 @@ public protocol LayoutAnchorProtocol {
 public extension LayoutAnchorProtocol {
     @discardableResult
     static func == (lhs: Self, rhs: Self) -> Constraint {
-        lhs.constraint(equalTo: rhs, constant: .zero, multiplier: 1, priority: .required).activated()
+        lhs.constraint(equalTo: rhs, constant: .zero, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func == (lhs: Self, rhs: LayoutAnchorTarget<Self>) -> Constraint {
-        lhs.constraint(equalTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority).activated()
+        lhs.constraint(equalTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority)
     }
 
     @discardableResult
     static func >= (lhs: Self, rhs: Self) -> Constraint {
-        lhs.constraint(greaterThanOrEqualTo: rhs, constant: .zero, multiplier: 1, priority: .required).activated()
+        lhs.constraint(greaterThanOrEqualTo: rhs, constant: .zero, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func >= (lhs: Self, rhs: LayoutAnchorTarget<Self>) -> Constraint {
-        lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority).activated()
+        lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority)
     }
 
     @discardableResult
     static func <= (lhs: Self, rhs: Self) -> Constraint {
-        lhs.constraint(lessThanOrEqualTo: rhs, constant: .zero, multiplier: 1, priority: .required).activated()
+        lhs.constraint(lessThanOrEqualTo: rhs, constant: .zero, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func <= (lhs: Self, rhs: LayoutAnchorTarget<Self>) -> Constraint {
-        lhs.constraint(lessThanOrEqualTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority).activated()
+        lhs.constraint(lessThanOrEqualTo: rhs.anchor, constant: rhs.constant, multiplier: rhs.multiplier, priority: rhs.priority)
     }
 }
 

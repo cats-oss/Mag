@@ -21,6 +21,6 @@ extension NSLayoutXAxisAnchor: LayoutAnchorProtocol {
 public extension NSLayoutXAxisAnchor {
     @discardableResult
     static func == (lhs: NSLayoutXAxisAnchor, rhs: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
-        lhs.constraint(equalTo: rhs).activated()
+        lhs.constraint(equalTo: rhs, constant: .zero, multiplier: 1, priority: .required)
     }
 }

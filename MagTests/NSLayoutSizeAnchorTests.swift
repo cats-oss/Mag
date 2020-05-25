@@ -118,7 +118,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(floor(constraintWidth.multiplier * 100)) == 30
                 expect(constraintWidth.priority) == .defaultHigh
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .equal
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -126,7 +126,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(floor(constraintHeight.multiplier * 100)) == 30
                 expect(constraintHeight.priority) == .defaultHigh
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .equal
             }
         }
@@ -185,7 +185,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(floor(constraintWidth.multiplier * 100)) == 30
                 expect(constraintWidth.priority) == .defaultHigh
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .greaterThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -193,7 +193,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(floor(constraintHeight.multiplier * 100)) == 30
                 expect(constraintHeight.priority) == .defaultHigh
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .greaterThanOrEqual
             }
         }
@@ -207,7 +207,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 0
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .required
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .greaterThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -215,7 +215,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 0
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .required
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .greaterThanOrEqual
             }
         }
@@ -229,7 +229,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .defaultHigh
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .greaterThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -237,7 +237,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .defaultHigh
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .greaterThanOrEqual
             }
         }
@@ -251,7 +251,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .required
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .greaterThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -259,7 +259,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .required
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .greaterThanOrEqual
             }
         }
@@ -274,7 +274,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(floor(constraintWidth.multiplier * 100)) == 30
                 expect(constraintWidth.priority) == .defaultHigh
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .lessThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -282,7 +282,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(floor(constraintHeight.multiplier * 100)) == 30
                 expect(constraintHeight.priority) == .defaultHigh
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .lessThanOrEqual
             }
         }
@@ -296,7 +296,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 0
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .required
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .lessThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -304,7 +304,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 0
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .required
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .lessThanOrEqual
             }
         }
@@ -318,7 +318,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .defaultHigh
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .lessThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -326,7 +326,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .defaultHigh
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .lessThanOrEqual
             }
         }
@@ -340,7 +340,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintWidth.constant) == 100
                 expect(constraintWidth.multiplier) == 1
                 expect(constraintWidth.priority) == .required
-                expect(constraintWidth.isActive) == true
+                expect(constraintWidth.isActive) == false
                 expect(constraintWidth.relation) == .lessThanOrEqual
                 let constraintHeight = constraints[1]
                 expect(constraintHeight.firstAnchor) == view.heightAnchor
@@ -348,7 +348,7 @@ private final class NSLayoutSizeAnchorTests: XCTestCase {
                 expect(constraintHeight.constant) == 200
                 expect(constraintHeight.multiplier) == 1
                 expect(constraintHeight.priority) == .required
-                expect(constraintHeight.isActive) == true
+                expect(constraintHeight.isActive) == false
                 expect(constraintHeight.relation) == .lessThanOrEqual
             }
         }

@@ -9,31 +9,31 @@ public protocol LayoutDimensionAnchorProtocol: LayoutAnchorProtocol {
 public extension LayoutDimensionAnchorProtocol {
     @discardableResult
     static func == (lhs: Self, rhs: Constant) -> Constraint {
-        lhs.constraint(equalToConstant: rhs, multiplier: 1, priority: .required).activated()
+        lhs.constraint(equalToConstant: rhs, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func == (lhs: Self, rhs: LayoutPriorityValue<Constant>) -> Constraint {
-        lhs.constraint(equalToConstant: rhs.value, multiplier: 1, priority: rhs.priority).activated()
+        lhs.constraint(equalToConstant: rhs.value, multiplier: 1, priority: rhs.priority)
     }
 
     @discardableResult
     static func >= (lhs: Self, rhs: Constant) -> Constraint {
-        lhs.constraint(greaterThanOrEqualToConstant: rhs, multiplier: 1, priority: .required).activated()
+        lhs.constraint(greaterThanOrEqualToConstant: rhs, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func >= (lhs: Self, rhs: LayoutPriorityValue<Constant>) -> Constraint {
-        lhs.constraint(greaterThanOrEqualToConstant: rhs.value, multiplier: 1, priority: rhs.priority).activated()
+        lhs.constraint(greaterThanOrEqualToConstant: rhs.value, multiplier: 1, priority: rhs.priority)
     }
 
     @discardableResult
     static func <= (lhs: Self, rhs: Constant) -> Constraint {
-        lhs.constraint(lessThanOrEqualToConstant: rhs, multiplier: 1, priority: .required).activated()
+        lhs.constraint(lessThanOrEqualToConstant: rhs, multiplier: 1, priority: .required)
     }
 
     @discardableResult
     static func <= (lhs: Self, rhs: LayoutPriorityValue<Constant>) -> Constraint {
-        lhs.constraint(lessThanOrEqualToConstant: rhs.value, multiplier: 1, priority: rhs.priority).activated()
+        lhs.constraint(lessThanOrEqualToConstant: rhs.value, multiplier: 1, priority: rhs.priority)
     }
 }

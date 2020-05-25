@@ -1,7 +1,7 @@
 @testable import Mag
 import XCTest
 
-private final class NSLayoutEdgeAnchorTests: XCTestCase {
+private final class NSLayoutVerticalAnchorTests: XCTestCase {
     let superView = View()
     var view: View!
     var second: View!
@@ -21,12 +21,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
     }
 
     func testEdgeAnchor() {
-        XCTContext.runActivity(named: "Operator + (NSLayoutEdgeAnchor, EdgeInsets)") { _ in
+        XCTContext.runActivity(named: "Operator + (NSLayoutVerticalAnchor, EdgeInsets)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor + EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+                let target = view.verticalAnchor + EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
                 expect(target.multiplier) == 1
@@ -34,12 +32,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator + (NSLayoutEdgeAnchor, LayoutPriorityValue)") { _ in
+        XCTContext.runActivity(named: "Operator + (NSLayoutVerticalAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor + (EdgeInsets(top: 100, left: 100, bottom: 100, right: 100) ~ .defaultHigh)
+                let target = view.verticalAnchor + (EdgeInsets(top: 100, left: 100, bottom: 100, right: 100) ~ .defaultHigh)
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
                 expect(target.multiplier) == 1
@@ -47,12 +43,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator - (NSLayoutEdgeAnchor, EdgeInsets)") { _ in
+        XCTContext.runActivity(named: "Operator - (NSLayoutVerticalAnchor, EdgeInsets)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor - EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+                let target = view.verticalAnchor - EdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == EdgeInsets(top: -100, left: -100, bottom: -100, right: -100)
                 expect(target.multiplier) == 1
@@ -60,12 +54,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator - (NSLayoutEdgeAnchor, EdgeInsets)") { _ in
+        XCTContext.runActivity(named: "Operator - (NSLayoutVerticalAnchor, EdgeInsets)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor - (EdgeInsets(top: 100, left: 100, bottom: 100, right: 100) ~ .defaultHigh)
+                let target = view.verticalAnchor - (EdgeInsets(top: 100, left: 100, bottom: 100, right: 100) ~ .defaultHigh)
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == EdgeInsets(top: -100, left: -100, bottom: -100, right: -100)
                 expect(target.multiplier) == 1
@@ -73,12 +65,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator * (NSLayoutEdgeAnchor, CGSize)") { _ in
+        XCTContext.runActivity(named: "Operator * (NSLayoutVerticalAnchor, CGSize)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor * 0.1
+                let target = view.verticalAnchor * 0.1
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == .zero
                 expect(target.multiplier) == 0.1
@@ -86,12 +76,10 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator * (NSLayoutEdgeAnchor, LayoutPriorityValue)") { _ in
+        XCTContext.runActivity(named: "Operator * (NSLayoutVerticalAnchor, LayoutPriorityValue)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor * (0.2 ~ .defaultHigh)
+                let target = view.verticalAnchor * (0.2 ~ .defaultHigh)
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == .zero
                 expect(target.multiplier) == 0.2
@@ -99,34 +87,30 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
             }
         }
 
-        XCTContext.runActivity(named: "Operator ~ (NSLayoutEdgeAnchor, UILayoutPriority)") { _ in
+        XCTContext.runActivity(named: "Operator ~ (NSLayoutVerticalAnchor, UILayoutPriority)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor ~ .defaultHigh
+                let target = view.verticalAnchor ~ .defaultHigh
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == .zero
                 expect(target.priority) == .defaultHigh
             }
         }
 
-        XCTContext.runActivity(named: "Operator ~ (NSLayoutEdgeAnchor, CGFloat)") { _ in
+        XCTContext.runActivity(named: "Operator ~ (NSLayoutVerticalAnchor, CGFloat)") { _ in
             XCTContext.runActivity(named: "returns LayoutAnchorTarget") { _ in
-                let target = view.edgeAnchor ~ 250
+                let target = view.verticalAnchor ~ 250
                 expect(target.anchor.topAnchor) == view.topAnchor
-                expect(target.anchor.leadingAnchor) == view.leadingAnchor
-                expect(target.anchor.trailingAnchor) == view.trailingAnchor
                 expect(target.anchor.bottomAnchor) == view.bottomAnchor
                 expect(target.constant) == .zero
                 expect(target.priority) == .init(250)
             }
         }
 
-        XCTContext.runActivity(named: "Operator == (NSLayoutEdgeAnchor, LayoutAnchorTarget)") { _ in
+        XCTContext.runActivity(named: "Operator == (NSLayoutVerticalAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let target = LayoutAnchorTarget(second.edgeAnchor, constant: EdgeInsets(top: 100, left: 100, bottom: 100, right: 100), multiplier: 0.3, priority: .defaultHigh)
-                let constraints = view.edgeAnchor == target
+                let target = LayoutAnchorTarget(second.verticalAnchor, constant: EdgeInsets(top: 100, left: 100, bottom: 100, right: 100), multiplier: 0.3, priority: .defaultHigh)
+                let constraints = view.verticalAnchor == target
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -143,28 +127,12 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .defaultHigh
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .equal
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 100
-                expect(floor(constraintLeft.multiplier * 100)) == 30
-                expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .equal
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == -100
-                expect(floor(constraintRight.multiplier * 100)) == 30
-                expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .equal
             }
         }
 
-        XCTContext.runActivity(named: "Operator == (NSLayoutEdgeAnchor, NSLayoutEdgeAnchor)") { _ in
+        XCTContext.runActivity(named: "Operator == (NSLayoutVerticalAnchor, NSLayoutVerticalAnchor)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constraints = view.edgeAnchor == second.edgeAnchor
+                let constraints = view.verticalAnchor == second.verticalAnchor
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -181,34 +149,18 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .required
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .equal
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 0
-                expect(constraintLeft.multiplier) == 1
-                expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .equal
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == 0
-                expect(constraintRight.multiplier) == 1
-                expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .equal
             }
         }
 
-        XCTContext.runActivity(named: "Operator >= (NSLayoutEdgeAnchor, LayoutAnchorTarget)") { _ in
+        XCTContext.runActivity(named: "Operator >= (NSLayoutVerticalAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
                 let target = LayoutAnchorTarget(
-                    second.edgeAnchor,
+                    second.verticalAnchor,
                     constant: EdgeInsets(top: 100, left: 100, bottom: 100, right: 100),
                     multiplier: 1,
                     priority: .defaultHigh
                 )
-                let constraints = view.edgeAnchor >= target
+                let constraints = view.verticalAnchor >= target
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -225,28 +177,12 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .defaultHigh
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .greaterThanOrEqual
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 100
-                expect(constraintLeft.multiplier) == 1
-                expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .greaterThanOrEqual
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == -100
-                expect(constraintRight.multiplier) == 1
-                expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .greaterThanOrEqual
             }
         }
 
-        XCTContext.runActivity(named: "Operator >= (NSLayoutEdgeAnchor, NSLayoutEdgeAnchor)") { _ in
+        XCTContext.runActivity(named: "Operator >= (NSLayoutVerticalAnchor, NSLayoutVerticalAnchor)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constraints = view.edgeAnchor >= second.edgeAnchor
+                let constraints = view.verticalAnchor >= second.verticalAnchor
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -263,34 +199,18 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .required
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .greaterThanOrEqual
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 0
-                expect(constraintLeft.multiplier) == 1
-                expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .greaterThanOrEqual
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == 0
-                expect(constraintRight.multiplier) == 1
-                expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .greaterThanOrEqual
             }
         }
 
-        XCTContext.runActivity(named: "Operator <= (NSLayoutEdgeAnchor, LayoutAnchorTarget)") { _ in
+        XCTContext.runActivity(named: "Operator <= (NSLayoutVerticalAnchor, LayoutAnchorTarget)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
                 let target = LayoutAnchorTarget(
-                    second.edgeAnchor,
+                    second.verticalAnchor,
                     constant: EdgeInsets(top: 100, left: 100, bottom: 100, right: 100),
                     multiplier: 1,
                     priority: .defaultHigh
                 )
-                let constraints = view.edgeAnchor <= target
+                let constraints = view.verticalAnchor <= target
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -307,28 +227,12 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .defaultHigh
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .lessThanOrEqual
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 100
-                expect(constraintLeft.multiplier) == 1
-                expect(constraintLeft.priority) == .defaultHigh
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .lessThanOrEqual
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == -100
-                expect(constraintRight.multiplier) == 1
-                expect(constraintRight.priority) == .defaultHigh
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .lessThanOrEqual
             }
         }
 
-        XCTContext.runActivity(named: "Operator <= (NSLayoutEdgeAnchor, NSLayoutEdgeAnchor)") { _ in
+        XCTContext.runActivity(named: "Operator <= (NSLayoutVerticalAnchor, NSLayoutVerticalAnchor)") { _ in
             XCTContext.runActivity(named: "returns [NSLayoutConstraint]") { _ in
-                let constraints = view.edgeAnchor <= second.edgeAnchor
+                let constraints = view.verticalAnchor <= second.verticalAnchor
                 let constraintTop = constraints[0]
                 expect(constraintTop.firstAnchor) == view.topAnchor
                 expect(constraintTop.secondAnchor) == second.topAnchor
@@ -345,22 +249,6 @@ private final class NSLayoutEdgeAnchorTests: XCTestCase {
                 expect(constraintBottom.priority) == .required
                 expect(constraintBottom.isActive) == false
                 expect(constraintBottom.relation) == .lessThanOrEqual
-                let constraintLeft = constraints[2]
-                expect(constraintLeft.firstAnchor) == view.leadingAnchor
-                expect(constraintLeft.secondAnchor) == second.leadingAnchor
-                expect(constraintLeft.constant) == 0
-                expect(constraintLeft.multiplier) == 1
-                expect(constraintLeft.priority) == .required
-                expect(constraintLeft.isActive) == false
-                expect(constraintLeft.relation) == .lessThanOrEqual
-                let constraintRight = constraints[3]
-                expect(constraintRight.firstAnchor) == view.trailingAnchor
-                expect(constraintRight.secondAnchor) == second.trailingAnchor
-                expect(constraintRight.constant) == 0
-                expect(constraintRight.multiplier) == 1
-                expect(constraintRight.priority) == .required
-                expect(constraintRight.isActive) == false
-                expect(constraintRight.relation) == .lessThanOrEqual
             }
         }
     }
