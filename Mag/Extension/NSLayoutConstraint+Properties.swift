@@ -11,7 +11,7 @@ extension NSLayoutConstraint {
         }
 
         (item as? View)?.translatesAutoresizingMaskIntoConstraints = false
-        let constraint = LayoutConstraint(
+        let constraint = NSLayoutConstraint(
             item: item,
             attribute: firstAttribute,
             relatedBy: relation,
@@ -23,6 +23,6 @@ extension NSLayoutConstraint {
         constraint.priority = priority
         constraint.shouldBeArchived = shouldBeArchived
         constraint.identifier = identifier
-        return constraint
+        return LayoutConstraintWrapper(origin: constraint)
     }
 }

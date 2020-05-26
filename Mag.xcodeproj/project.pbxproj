@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C72D59EA247B662600053F98 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59E9247B662600053F98 /* LayoutConstraint.swift */; };
+		C72D59EA247B662600053F98 /* LayoutConstraintWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59E9247B662600053F98 /* LayoutConstraintWrapper.swift */; };
 		C72D59EC247B8AE500053F98 /* NSLayoutConstraint+Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59EB247B8AE500053F98 /* NSLayoutConstraint+Activation.swift */; };
-		C72D59EE247B9B6C00053F98 /* LayoutConstraintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59ED247B9B6C00053F98 /* LayoutConstraintTests.swift */; };
+		C72D59EE247B9B6C00053F98 /* LayoutConstraintWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59ED247B9B6C00053F98 /* LayoutConstraintWrapperTests.swift */; };
 		C72D59F0247BA53700053F98 /* NSLayoutConstraint+PropertiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59EF247BA53700053F98 /* NSLayoutConstraint+PropertiesTests.swift */; };
 		C72D59F2247BA7A900053F98 /* NSLayoutConstraint+ActivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59F1247BA7A900053F98 /* NSLayoutConstraint+ActivationTests.swift */; };
 		C72D59F4247BBDDA00053F98 /* NSLayoutHorizontalAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D59F3247BBDDA00053F98 /* NSLayoutHorizontalAnchor.swift */; };
@@ -57,9 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C72D59E9247B662600053F98 /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		C72D59E9247B662600053F98 /* LayoutConstraintWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintWrapper.swift; sourceTree = "<group>"; };
 		C72D59EB247B8AE500053F98 /* NSLayoutConstraint+Activation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Activation.swift"; sourceTree = "<group>"; };
-		C72D59ED247B9B6C00053F98 /* LayoutConstraintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintTests.swift; sourceTree = "<group>"; };
+		C72D59ED247B9B6C00053F98 /* LayoutConstraintWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintWrapperTests.swift; sourceTree = "<group>"; };
 		C72D59EF247BA53700053F98 /* NSLayoutConstraint+PropertiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+PropertiesTests.swift"; sourceTree = "<group>"; };
 		C72D59F1247BA7A900053F98 /* NSLayoutConstraint+ActivationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+ActivationTests.swift"; sourceTree = "<group>"; };
 		C72D59F3247BBDDA00053F98 /* NSLayoutHorizontalAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutHorizontalAnchor.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 			children = (
 				C7FDF9BE2387E0B9001FF5D3 /* Info.plist */,
 				C73B460C23D585AB00353CF1 /* LayoutAnchorTargetTests.swift */,
-				C72D59ED247B9B6C00053F98 /* LayoutConstraintTests.swift */,
+				C72D59ED247B9B6C00053F98 /* LayoutConstraintWrapperTests.swift */,
 				C73B460A23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift */,
 				C7FDF9EE238BA99A001FF5D3 /* NSLayoutCenterAnchorTests.swift */,
 				C7FDF9F2238BA99A001FF5D3 /* NSLayoutDimension+OperatorTests.swift */,
@@ -230,7 +230,7 @@
 		C7FDF9E92387EA62001FF5D3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				C72D59E9247B662600053F98 /* LayoutConstraint.swift */,
+				C72D59E9247B662600053F98 /* LayoutConstraintWrapper.swift */,
 				C7FDF9E72387EA23001FF5D3 /* LayoutPriority.swift */,
 				C7FDF9EA2387EB00001FF5D3 /* EdgeInsets.swift */,
 				C7FDF9EC2387ED73001FF5D3 /* View.swift */,
@@ -365,7 +365,7 @@
 				C7FDF9D92387E71D001FF5D3 /* NSLayoutEdgeAnchor.swift in Sources */,
 				C7FDF9DF2387E71D001FF5D3 /* NSLayoutYAxisAnchor+Anchor.swift in Sources */,
 				C7FDF9DD2387E71D001FF5D3 /* NSLayoutXAxisAnchor+Anchor.swift in Sources */,
-				C72D59EA247B662600053F98 /* LayoutConstraint.swift in Sources */,
+				C72D59EA247B662600053F98 /* LayoutConstraintWrapper.swift in Sources */,
 				C7FDF9E62387E71D001FF5D3 /* NSLayoutSizeAnchor.swift in Sources */,
 				C7FDF9E82387EA23001FF5D3 /* LayoutPriority.swift in Sources */,
 			);
@@ -382,7 +382,7 @@
 				C7FDF9F9238BA99A001FF5D3 /* NSLayoutSizeAnchorTests.swift in Sources */,
 				C73B460B23D583DD00353CF1 /* LayoutPriorityPrecedenceTests.swift in Sources */,
 				C7FDF9F8238BA99A001FF5D3 /* NSLayoutDimension+OperatorTests.swift in Sources */,
-				C72D59EE247B9B6C00053F98 /* LayoutConstraintTests.swift in Sources */,
+				C72D59EE247B9B6C00053F98 /* LayoutConstraintWrapperTests.swift in Sources */,
 				C7FDF9F6238BA99A001FF5D3 /* NSLayoutEdgeAnchorTests.swift in Sources */,
 				C7FDF9F5238BA99A001FF5D3 /* NSLayoutXAxisAnchor+OperatorTests.swift in Sources */,
 				C72D59F8247BC0E700053F98 /* NSLayoutHorizontalAnchorTests.swift in Sources */,
@@ -531,6 +531,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mag/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
